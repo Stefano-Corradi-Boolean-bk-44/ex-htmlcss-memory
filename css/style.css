@@ -1,0 +1,88 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Nerko One', cursive;
+  font-size: 1.5em;
+  background-color: #add8e6;
+}
+
+header{
+  padding: 20px 0;
+  font-size: 90px;
+  color: white;
+  text-align: center;
+}
+
+header p{
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.container{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.row{
+  text-align: center;
+}
+
+/* di default la card ha il bg image*/
+.card{
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  margin: 1%;
+  padding: 20px 10px 40px 10px;
+  border-radius: 10px;
+  background-size: contain;
+  background-color: white;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  background-image: url('../img/pattern.png');
+}
+
+.card.active{
+  background-image: none;
+}
+
+/* di default l'immafine è nascosta (non cancellata! non display:none) */
+.card img{
+  visibility: hidden;
+  width: 100%;
+}
+
+/* di default il testo è display;none perché essendo position:absolute non influisce sulla dimensione del contenitore perché in ogni caso non viene visto */
+.card h3{
+  display: none;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  bottom: 15px;
+  color: brown;
+}
+
+
+
+/* all'hover mostro il puntatore e tolgo l'immagine di sfondo */
+.card:hover, .card.active img{
+  cursor: pointer;
+  background-image: none;
+}
+
+/* all'hover (sempre della card) mostro il testo */
+.card:hover h3, .card.active h3{
+  display: block;
+}
+.card.active:hover h3{
+  color: red;
+}
+
+/* all'hover (sempre della card) mostro l'immagine */
+.card:hover img , .card.active img{
+  visibility: visible;
+}
+
+
